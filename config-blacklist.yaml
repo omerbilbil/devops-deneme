@@ -1,0 +1,142 @@
+detectors:
+  - name: ServiceDomainDetector
+    keywords:
+      - thy
+      - url
+    regex:
+      adjective: '(?i)https://(?:[A-Za-z0-9-]+\.)*thy\.com(?:/[^\s?]*)?(?:\?[^\s]*)?'
+
+  - name: DomainDetector
+    keywords:
+      - turkishairlines
+      - url
+    regex:
+      adjective: '(?i)https://(?:[A-Za-z0-9.-]+\.)?turkishairlines\.com(?:/[^?\s]*)?(?:\?[^\s]*)?'
+
+  - name: thyDomain
+    keywords:
+      - turkishairlines
+      - url
+      - thy
+      - endpoint
+      - host
+    regex:
+      adjective: '(?i)\b[a-z0-9.-]*thy\.com(?::\d+)?\b'
+
+  - name: IPAddressDetector
+    keywords:
+      - ip
+      - ip_address
+      - host
+      - hostname
+      - server
+      - url
+      - endpoint
+      - connection
+      - target
+      - proxy
+      - dns
+      - remote
+      - destination
+      - addr
+    regex:
+      adjective: '(?:25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)){3}'
+
+  - name: DBDetector
+    keywords:
+      - host
+      - database
+      - db
+      - connection
+      - url
+      - driver
+      - jdbc
+    regex:
+      adjective: '(?i)[A-Za-z0-9.-]+dbt?\.thy\.com'
+
+  - name: EnvironmentDetector
+    keywords:
+      - environment
+      - env
+      - app_env
+      - stage
+      - staging
+      - production
+      - prod
+      - dev
+      - test
+      - uat
+      - preprod
+      - pilot
+    regex:
+      adjective: '(?i)(?:env(?:ironment)?|app_env|stage)\s*[:=]\s*(?:prod|production|dev|test|staging|preprod|pilot|uat|nonprod)'
+
+  - name: localHostDetector
+    keywords:
+      - url
+      - host
+      - localhost
+      - port
+    regex:
+      adjective: '(?i)\bhttps?://(?:localhost|\d{1,3}(?:\.\d{1,3}){3})(?::\d{1,5})?\b'
+
+  - name: DBConnectionDetector
+    keywords:
+      - url
+      - host
+      - jdbc
+      - mysql
+      - sql
+      - oracle
+      - connection
+      - db
+      - database
+    regex:
+      adjective: '(?i)(?:jdbc:.*|db2:.*|oracle:.*|mysql:.*|postgresql:.*)'
+
+  - name: FirebaseDomainDetector
+    keywords:
+      - firebase
+    regex:
+      adjective: '(?i)(?:[a-z0-9.-]+\.firebaseio\.com|[a-z0-9.-]+\.firebaseapp\.com)'
+
+  - name: MacAddressDetector
+    keywords:
+      - mac
+      - address
+    regex:
+      adjective: '(?i)(?:[0-9A-Fa-f]{2}(?::[0-9A-Fa-f]{2}){5}|[0-9A-Fa-f]{2}(?:-[0-9A-Fa-f]{2}){5}|[0-9A-Fa-f]{4}(?:\.[0-9A-Fa-f]{4}){2})'
+
+  - name: AWSServiceURLDetector
+    keywords:
+      - aws
+      - amazon
+      - s3
+      - mws
+    regex:
+      adjective: '(?i)(?:amzn\.mws\.[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|[a-z0-9.-]+\.s3\.amazonaws\.com|[a-z0-9.-]+\.s3-website[.-](?:eu|ap|us|ca|sa|cn)|[a-z0-9.-]+\.s3-[a-z0-9-]+\.amazonaws\.com|//s3\.amazonaws\.com/[a-z0-9._-]+|//s3-[a-z0-9-]+\.amazonaws\.com/[a-z0-9._-]+)'
+
+  - name: IPAddressPatternDetector
+    keywords:
+      - ip
+      - address
+      - host
+      - connection
+    regex:
+      adjective: '\b(?:[0-9]{1,3}\.){3}[0-9]{1,3}\b'
+
+  - name: AWSAccessKeyDetector
+    keywords:
+      - AWS
+      - key
+      - AKIA
+      - A3T
+      - AGPA
+      - AIDA
+      - AROA
+      - AIPA
+      - ANPA
+      - ANVA
+      - ASIA
+    regex:
+      adjective: '(?i).*([^A-Z0-9]|^)(?:AKIA|A3T|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{12,}.*'
